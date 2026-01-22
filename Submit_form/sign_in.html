@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google form</title>
+    <!-- Link to CSS fiile-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="form-container">
+
+
+<div class="center-text">
+
+        <div>
+
+            <a href="https://github.com">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="100">
+            </a>
+            
+        </div>
+
+         <h2>Sign in for Github</h2>
+
+        <div>
+        <form action="">    
+            <h2><label for="email">Email:</label><br></h2>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" required><br>
+
+        </div>
+        
+        <div>
+
+            <h2><label for="password">Password</label><br></h2>
+            <input type="password" id="password" name="password"
+            maxlength="15"
+            placeholder="Password"  
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}"
+            title="Must contain uppercase, lowercase, number, and not over 15 characters"
+            required><br>   
+            
+        </div>
+    
+        <br><button type="submit">Sign in</button>
+    
+    </form>
+
+</div>
+
+    <div class="center-text">
+        <br>
+        
+        <p>New to Github?<a href="sign_up.html"> Create an account</a></p>
+
+    </div>
+
+
+</div>
+
+
+</body>
+</html>

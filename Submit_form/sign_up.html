@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Google form</title>
+    <!-- Link to CSS fiile-->
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+<div class="form-container">
+
+
+<div class="center-text">
+
+    <form action="">
+
+        <div>
+
+            <a href="https://github.com">
+            <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="100">
+            </a>
+            
+        </div>
+
+         <h2>Sign up for Github</h2>
+
+        <div>
+
+            <h2><label for="email">Email:</label><br></h2>
+            <input type="email" id="email" name="email" placeholder="example@gmail.com" required><br>
+
+        </div>
+        
+        <div>
+
+            <h2><label for="password">Password</label><br></h2>
+            <input type="password" id="password" name="password"
+            maxlength="15"
+            placeholder="Password"  
+            pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[^A-Za-z0-9]).{8,}"
+            title="Must contain uppercase, lowercase, number, and not over 15 characters"
+            required><br>
+            <p class="transparent-text">Password should be atleast 15 characters OR atleast 8 characters including a number and a lowercase letter</p>
+
+        </div>
+        
+        <div>
+
+            <h2><label for="username">Username:</label><br></h2>
+            <input type="text" id="username" name="username" placeholder="Username" maxlength="15" required><br>
+            <p class="transparent-text">Username may only contain alphanumeric characters or single hyphens, and cannot begin or end with a hyphen</p>
+
+        </div>
+        
+        <div>
+
+            <h2><label for="Country">Country/Region</label></h2>
+            <input type="text" id="text" name="country" placeholder="Cambodia" required>
+
+
+        </div>
+
+        <br><button type="submit">Sign up</button>
+    
+    </form>
+
+</div>
+
+    <div>
+
+        <p>Already have an account?<a href="sign_in.html"> Sign in to Github</a></p>
+
+
+    </div>
+
+</div>
+</body>
+</html>
