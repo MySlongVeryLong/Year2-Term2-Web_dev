@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>  
+
+    <!-- Input leap year -->
+
+    <h1 style="color: pink;">Exercise 1</h1>
+
+    <h1 id="Hello"> Leap Year or nah</h1>
+
+    <button id="button">Click here for prompt</button>
+
+    <h1 id="display"></h1>
+
+    <!-- Join all values in array-->
+
+    <h1 style="color: orange">Exercise 2</h1>
+
+    <h1>Joining all values in the array</h1>
+
+    <h2 id="array"></h2>
+
+    <!-- Greet based on the time of the day -->
+
+    <h1 style="color: purple">Exercise 3</h1>
+
+    <h1 id="time"></h1>
+
+    <h2 id="timeDisplay"></h2>
+
+    <h1 style="color: Red;">Exercise 4</h1>
+
+    <!-- Casecar Cipher-->
+
+    <h1>Caesar Ciphere</h1>
+
+    <input type="text" id="plaintext" placeholder="provide a string to encrypt"><br><br>
+
+    <input type="text" id="shift" placeholder="Number, you want to shift">  
+
+
+    <script>
+
+        // Exercise 1
+
+        const text = document.getElementById("Hello")
+
+        const button = document.getElementById("button")
+
+        const display = document.getElementById("display")
+
+        button.addEventListener("click", function(){
+
+            let year = Number(prompt("Enter your leap year", 934))
+            
+            if (year % 4 == 0){
+
+                text.textContent = "YOU ARE CORRECT"
+
+                display.textContent = "Your leap year was " + year;
+
+                document.getElementById("display").textContent = answer;
+
+            } else{
+            
+                text.textContent = "LOL, YOU ARE INCORRECT, GET NOOBED"
+
+                display.textContent= "Your leap was " + year;
+            }
+        });
+
+        // Exercise 2
+
+        const colour = ["Red", "Green" , "Blue", "Black"]
+
+        const join = colour.join()
+
+        document.getElementById("array").textContent = join;
+
+        // Exercise 3
+
+        const time = GetTime()
+
+        // get current time
+
+        function GetTime(){
+
+            let greet;
+            
+            let time  = new Date()
+            // let today = time.getDate()
+            let hour = time.getHours()
+            let min = time.getMinutes()
+            let sec = time.getSeconds()
+
+            if(hour >= 18){
+
+                greet = "Good evening there!"
+        
+            }
+
+            else if(hour >= 12){
+
+                greet = "Good afternoon there!"
+            }
+
+            else{
+
+                greet = "Good morning there!"
+
+            }   
+            return greet
+        }
+
+        document.getElementById("time").textContent = time;
+
+        // display real time
+
+        function display_time(){
+
+            let date = new Date()
+
+            document.getElementById("timeDisplay").textContent = date.getHours() + ":" + date.getMinutes() + ":" + date.getSeconds()
+        }   
+        
+        setInterval(display_time, 1000)
+
+        display_time(); 
+
+        // Exercise 4
+
+        let user_input = document.getElementById("plaintext").value;
+
+        function encrypt(user_input){
+
+            let x = user_input.charCodeAt(0)
+
+            console.log(x)
+
+        }   
+    
+        encrypt(user_input)
+
+
+
+    </script>   
+    
+</body>
+</html>
