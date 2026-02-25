@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .login-container {
+            display: flex;
+            justify-content: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <div class="login-container">
+        <form id="loginForm" style="border: 1px solid #ccc; padding: 20px; border-radius: 8px; width: 300px;">
+            <h1>Login Page</h1>
+
+            <label for="Role">Role</label>
+            <select id="role" required style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+                <option value="">Select Role</option>
+                <option value="nurse">Nurse</option>
+                <option value="doctor">Doctor</option>
+            </select>
+
+            <label for="ID">Practitioner ID</label>
+            <input type="text" id="username" required style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;">
+            <br>
+            <label for="password">Password</label>
+            <input type="password" id="password" required style="width: 100%; padding: 8px; margin: 8px 0; box-sizing: border-box;"><br>
+            <button type="submit" title="Click to login" style="width: 100%; padding: 10px; margin-top: 10px;">Login</button>
+        </form>
+    </div>
+
+
+    <script>
+
+    const user_pass = document.getElementById("password");
+    const loginForm = document.getElementById("loginForm");
+
+    user_pass.addEventListener("input", function () {
+
+        let feed_back;
+
+        console.log(user_pass.value);
+
+        const pass_len = user_pass.value.length;
+
+        if (pass_len >= 8) {
+
+            const hasUpper = /[A-Z]/.test(user_pass.value);
+            const hasLower = /[a-z]/.test(user_pass.value);
+            const hasDigit = /[0-9]/.test(user_pass.value);
+
+            if (hasUpper && hasLower && hasDigit) {
+                feed_back = "Strong password";
+            } else {
+                feed_back = "Medium password";
+            }
+
+        } else {
+
+            feed_back = "Weak password";
+
+        }
+
+        console.log(feed_back);
+
+        user_pass.title = feed_back;
+
+    });
+
+
+    </script>
+
+</body>
+</html>
