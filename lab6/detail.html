@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Details - Lab 6</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Check Cookie again
+        if (!document.cookie.includes("username=")) {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="detail-container" style="padding: 50px; max-width: 800px; margin: auto;">
+        <h1>Registered Users</h1>
+        <table border="1" style="width:100%; border-collapse: collapse; background: white;">
+            <thead>
+                <tr style="background: #f2f2f2;">
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Phone</th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"></tbody>
+        </table>
+        <br>
+        <button onclick="window.location.href='index.html'">Back to Login</button>
+    </div>
+
+    <script>
+        const users = JSON.parse(localStorage.getItem("userArray")) || [];
+        const tbody = document.getElementById("tableBody");
+
+        users.forEach(user => {
+            let row = `<tr>
+                <td>${user.fullName}</td>
+                <td>${user.email}</td>
+                <td>${user.phone}</td>
+            </tr>`;
+            tbody.innerHTML += row;
+        });
+    </script>
+</body>
+</html>

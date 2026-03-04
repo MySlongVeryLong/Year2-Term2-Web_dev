@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Lab 6</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        // Step 1: Check Cookie on page load
+        if (!document.cookie.includes("username=")) {
+            window.location.href = "index.html";
+        }
+    </script>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Register User</h1>
+        <form id="regForm">
+            <label>Full Name</label>
+            <input type="text" id="fullName" required>
+            <label>Email</label>
+            <input type="email" id="email" required>
+            <label>Phone</label>
+            <input type="tel" id="phone" required>
+            <button type="submit">Submit Registration</button>
+        </form>
+    </div>
+
+    <script>
+        document.getElementById("regForm").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            // Create Object
+            let newUser = {
+                fullName: document.getElementById("fullName").value,
+                email: document.getElementById("email").value,
+                phone: document.getElementById("phone").value
+            };
+
+            // Get existing array from local storage or start new one
+            let users = JSON.parse(localStorage.getItem("userArray")) || [];
+            users.push(newUser);
+
+            // Store as array in local storage
+            localStorage.setItem("userArray", JSON.stringify(users));
+
+            window.location.href = "detail.html";
+        });
+    </script>
+</body>
+</html>
